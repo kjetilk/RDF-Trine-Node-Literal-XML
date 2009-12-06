@@ -23,7 +23,7 @@ use XML::LibXML qw(:ns);
 
 our ($VERSION, %XML_FRAGMENTS);
 BEGIN {
-	$VERSION	= '0.14';
+	$VERSION	= '0.14_1';
 }
 
 ######################################################################
