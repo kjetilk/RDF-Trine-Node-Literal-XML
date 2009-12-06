@@ -12,6 +12,7 @@ throws_ok {
 	my $l		= RDF::Trine::Node::Literal::XML->new( '<foo>bar', undef, 'http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral' );
 } 'RDF::Trine::Error', 'throws on invalid xml';
 
+
 throws_ok {
 	my $l		= RDF::Trine::Node::Literal::XML->new( '<foo>bar');
 } 'RDF::Trine::Error', 'throws on invalid xml without optional arguments';
@@ -21,6 +22,13 @@ throws_ok {
 	my $l		= RDF::Trine::Node::Literal::XML->new( '<foo>', undef, 'http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral' );
 } 'RDF::Trine::Error', 'throws on invalid xml';
 
+lives_ok {
+	my $l		= RDF::Trine::Node::Literal::XML->new( '', undef, 'http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral' );
+} 'lives on empty literal';
+
+lives_ok {
+	my $l		= RDF::Trine::Node::Literal::XML->new( 'text', undef, 'http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral' );
+} 'lives on plain text literal';
 
 
 lives_ok {
@@ -87,10 +95,10 @@ lives_ok {
 }
 
 
-throws_ok {
+lives_ok {
 	my $text = XML::LibXML::Text->new('text');
 	my $l	= RDF::Trine::Node::Literal::XML->new( $text );
-} 'RDF::Trine::Error', 'throws on text node';
+} 'lives on text node';
 
 lives_ok { 
   my $parser = XML::LibXML->new();
