@@ -54,7 +54,7 @@ lives_ok {
 
 {
   my $parser = XML::LibXML->new();
-  my $doc = $parser->parse_balanced_chunk( '<root><bar xml:lang="en">baz</bar><foo>dahut</foo></root>');
+  my $doc = $parser->parse_balanced_chunk( '<root><bar xml:lang="en">baz</bar><foo>dahut</foo></root>'); 
   my $l	= RDF::Trine::Node::Literal::XML->new( $doc, 'tlh' );
   isa_ok( $l, 'RDF::Trine::Node::Literal::XML' );
   is( $l->literal_value, '<root xml:lang="tlh"><bar xml:lang="en">baz</bar><foo>dahut</foo></root>', 'Documentfragment expected literal value with lang on root' );
