@@ -24,7 +24,8 @@ requires		'Error'					=> 0;
 
 
 use XML::LibXML;
-die "You need at libxml2 of at least 2.6.23 for canonicalisation to work properly" unless (XML::LibXML::LIBXML_VERSION >= 20623);
+use Carp;
+croak "You need at libxml2 of at least 2.6.23 for canonicalisation to work properly" unless (XML::LibXML::LIBXML_VERSION >= 20623);
 
 
 
