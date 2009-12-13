@@ -16,6 +16,8 @@ test_requires		'Test::Exception'			=> 0;
 
 include                 'Test::Signature';
 
+configure_requires     	'XML::LibXML'				=> 0;
+configure_requires     	'Carp'				        => 0;
 
 requires 		'RDF::Trine'				=> 0.111;
 requires		'Scalar::Util'				=> 0;
