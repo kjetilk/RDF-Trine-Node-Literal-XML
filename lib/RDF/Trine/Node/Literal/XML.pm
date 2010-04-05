@@ -11,7 +11,6 @@ package RDF::Trine::Node::Literal::XML;
 
 use strict;
 use warnings;
-no warnings 'redefine';
 use base qw(RDF::Trine::Node::Literal);
 
 use RDF::Trine::Error qw(:try);
@@ -178,6 +177,7 @@ sub DESTROY {
 	if ($self->can('SUPER::DESTROY')) {
 		$self->SUPER::DESTROY();
 	}
+	return;
 }
 
 1;
