@@ -42,5 +42,6 @@ my:v_0_15
         [ rdfs:label "require libxml2 2.6.27."@en ] ,
         [ rdfs:label "Set configure_requires XML::LibXML."@en ] ,
         [ rdfs:label "Add Test::Perl::Critic author test."@en ; a dcs:Addition ] ,
+        [ rdfs:label "Add auto_set_repository, auto_set_bugtracker, write_doap_changes."@en ; a dcs:Addition ] ,
         [ rdfs:label "Minor Perl::Critic stuff."@en ; a dcs:Bugfix ]
     ] .
