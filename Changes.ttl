@@ -1,0 +1,46 @@
+@prefix :     <http://usefulinc.com/ns/doap#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix my:   <http://search.cpan.org/dist/RDF-Trine-Node-Literal-XML/Changes.ttl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcs:  <http://ontologi.es/doap-changeset#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+<>
+    dc:title     "DOAP for RDF-Trine-Node-Literal-XML"@en ;
+    dc:subject   my:project ;
+    dc:creator   <http://www.kjetil.kjernsmo.net/foaf#me> .
+
+my:project	 
+    a           :Project ;
+    :name       "RDF-Trine-Node-Literal-XML" ;
+    :shortdesc  "A simple RDFa-like templating language"@en ;
+    :created    "2009-12-06"^^xsd:date ;
+    :programming-language "Perl" ;
+    :homepage <http://search.cpan.org/dist/RDF-Trine-Node-Literal-XML/> ;
+    :maintainer <http://www.kjetil.kjernsmo.net/foaf#me> ;
+    :developer <http://kasei.us/about/foaf.xrdf#greg> ;
+    :bug-database <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=RDF-Trine-Node-Literal-XML> ;
+    :release    my:v_0_15 .
+
+<http://www.kjetil.kjernsmo.net/foaf#me>
+    a           foaf:Person ;
+    foaf:name   "Kjetil Kjernsmo" ;
+    foaf:mbox   <mailto:kjetilk@cpan.org> .
+
+
+
+my:v_0_15
+    a           :Version ;
+    dc:issued   "2010-04-05"^^xsd:date ;
+    :revision   "0.15"^^xsd:string ;
+    rdfs:label  "Mostly packaging issues and minor fixes"@en ; 
+    dcs:changeset [
+      dcs:item
+        [ rdfs:label "Run perltidy."@en ] ,
+        [ rdfs:label "require libxml2 2.6.27."@en ] ,
+        [ rdfs:label "Set configure_requires XML::LibXML."@en ] ,
+        [ rdfs:label "Add Test::Perl::Critic author test."@en ; a dcs:Addition ] ,
+        [ rdfs:label "Minor Perl::Critic stuff."@en ; a dcs:Bugfix ]
+    ] .
