@@ -22,7 +22,8 @@ my:project
     :maintainer <http://www.kjetil.kjernsmo.net/foaf#me> ;
     :developer <http://kasei.us/about/foaf.xrdf#greg> ;
     :bug-database <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=RDF-Trine-Node-Literal-XML> ;
-    :release    my:v_0_15 .
+    :release    my:v_0_15 ;
+    :release    my:v_0_16 .
 
 <http://www.kjetil.kjernsmo.net/foaf#me>
     a           foaf:Person ;
@@ -45,3 +46,13 @@ my:v_0_15
         [ rdfs:label "Add auto_set_repository, auto_set_bugtracker, write_doap_changes."@en ; a dcs:Addition ] ,
         [ rdfs:label "Minor Perl::Critic stuff."@en ; a dcs:Bugfix ]
     ] .
+
+my:v_0_16
+    a           :Version ;
+    dc:issued   "2010-04-06"^^xsd:date ;
+    :revision   "0.16"^^xsd:string ;
+    rdfs:label  "Make Test::Signature author test"@en ; 
+    dcs:changeset [
+      dcs:item
+        [ rdfs:label "Make Test::Signature author test."@en ] 
+     ] .
