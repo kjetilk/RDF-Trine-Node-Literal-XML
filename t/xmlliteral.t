@@ -1,4 +1,4 @@
-use Test::More tests => 39;
+use Test::More tests => 37;
 use Test::Exception;
 use Test::NoWarnings;
 
@@ -101,10 +101,6 @@ lives_ok {
 	my $l	= RDF::Trine::Node::Literal::XML->new( $text );
 } 'lives on text node';
 
-lives_ok {
-	my $text = XML::LibXML::Text->new('text');
-	my $l	= RDF::Trine::Node::Literal::XML->new( $text, 'tlh' );
-} 'lives on text node with lang';
 
 lives_ok { 
   my $parser = XML::LibXML->new();
@@ -137,11 +133,6 @@ lives_ok {
   my $node = XML::LibXML::CDATASection->new( '<cdata>' );
   my $l	= RDF::Trine::Node::Literal::XML->new( $node );
 } 'lives on cdatasection';
-
-lives_ok { 
-  my $node = XML::LibXML::CDATASection->new( '<cdata>' );
-  my $l	= RDF::Trine::Node::Literal::XML->new( $node, 'tlh' );
-} 'lives on cdatasection with lang';
 
 
 lives_ok { 
