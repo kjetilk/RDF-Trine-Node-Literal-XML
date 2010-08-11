@@ -1,9 +1,10 @@
-use Test::More;
+use Test::More tests => 36;
 use Test::Exception;
+use Test::NoWarnings;
 
 use strict;
 use warnings;
-no warnings 'redefine';
+
 
 use_ok( 'RDF::Trine::Node::Literal::XML' );
 use_ok( 'XML::LibXML' );
@@ -100,6 +101,11 @@ lives_ok {
 	my $l	= RDF::Trine::Node::Literal::XML->new( $text );
 } 'lives on text node';
 
+lives_ok {
+	my $text = XML::LibXML::Text->new('text');
+	my $l	= RDF::Trine::Node::Literal::XML->new( $text, 'tlh' );
+} 'lives on text node with lang';
+
 lives_ok { 
   my $parser = XML::LibXML->new();
   my $doc = $parser->parse_string( '<bar>baz</bar>');
@@ -119,6 +125,11 @@ lives_ok {
   my $l	= RDF::Trine::Node::Literal::XML->new( $node );
 } 'lives on cdatasection';
 
+lives_ok { 
+  my $node = XML::LibXML::CDATASection->new( '<cdata>' );
+  my $l	= RDF::Trine::Node::Literal::XML->new( $node, 'tlh' );
+} 'lives on cdatasection with namespace';
+
 
 lives_ok { 
   my $parser = XML::LibXML->new();
@@ -127,5 +138,3 @@ lives_ok {
   my $l	= RDF::Trine::Node::Literal::XML->new( $nodes );
 } 'lives on nodelist';
 
-
-done_testing;

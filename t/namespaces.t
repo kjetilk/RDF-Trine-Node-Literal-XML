@@ -1,9 +1,10 @@
-use Test::More;
+use Test::More tests => 29 ;
 use Test::Exception;
+use Test::NoWarnings;
 
 use strict;
 use warnings;
-no warnings 'redefine';
+
 
 use_ok( 'RDF::Trine::Node::Literal::XML' );
 use_ok( 'XML::LibXML' );
@@ -114,6 +115,3 @@ lives_ok {
 }
 
 
-
-
-done_testing;
