@@ -42,19 +42,27 @@ It can either be passed a string or an XML::LibXML node.
 In the case of passing a string, this method follows the same API as the
 RDF::Trine::Node::Literal constructor, but:
 
-* $string must be a well-balanced XML fragment
-* $lang is optional, but if a language code is present it will be used as the value of C<< xml:lang >> attribute(s) on the root XML element(s) of the literal. If the element already has an C<< xml:lang >> attribute it will be overwritten.
-* $datatype will be ignored and set to 'http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral'
+=over
+
+=item * $string must be a well-balanced XML fragment
+=item * $lang is optional, but if a language code is present it will be used as the value of C<< xml:lang >> attribute(s) on the root XML element(s) of the literal. If the element already has an C<< xml:lang >> attribute it will be overwritten. For the node types that doesn't support adding a language, text and CData, a warning will be issued.
+=item * $datatype will be ignored and set to 'http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral'
+
+=back
 
 In the case of using a XML::LibXML node C<< $node >>,
 the Node may be one of these types or a subclass thereof:
 
-  * XML::LibXML::Document
-  * XML::LibXML::DocumentFragment
-  * XML::LibXML::Element
-  * XML::LibXML::CDATASection
-  * XML::LibXML::NodeList
-  * XML::LibXML::Text
+=over
+
+=item * XML::LibXML::Document
+=item * XML::LibXML::DocumentFragment
+=item * XML::LibXML::Element
+=item * XML::LibXML::CDATASection
+=item * XML::LibXML::NodeList
+=item * XML::LibXML::Text
+
+=back
 
 If the string is not a valid XML fragment, and the C<< $node >> is not
 of one of the above types, this method throws a RDF::Trine::Error exception.
