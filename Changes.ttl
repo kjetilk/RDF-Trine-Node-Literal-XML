@@ -5,6 +5,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dcs:  <http://ontologi.es/doap-changeset#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 
 <>
@@ -15,7 +16,7 @@
 my:project	 
     a           :Project ;
     :name       "RDF-Trine-Node-Literal-XML" ;
-    :shortdesc  "A simple RDFa-like templating language"@en ;
+    :shortdesc  "Get XML::LibXML objects for rdf:XMLLiterals"@en ;
     :created    "2009-12-06"^^xsd:date ;
     :programming-language "Perl" ;
     :homepage <http://search.cpan.org/dist/RDF-Trine-Node-Literal-XML/> ;
@@ -50,10 +51,13 @@ my:v_0_15
 
 my:v_0_16
     a           :Version ;
-    dc:issued   "2010-04-06"^^xsd:date ;
+    dc:issued   "2011-03-04"^^xsd:date ;
     :revision   "0.16"^^xsd:string ;
     rdfs:label  "Make Test::Signature author test"@en ; 
     dcs:changeset [
       dcs:item
+        [ rdfs:label "Another test."@en ] ,
+        [ rdfs:label "Minor cleanup POD."@en ] ,
+        [ rdfs:label "Minor cleanup in Makefile.PL."@en ] ,
         [ rdfs:label "Make Test::Signature author test."@en ] 
      ] .
