@@ -9,6 +9,7 @@ tar.gz$
 .bak$
 .tmp$
 .old$
+^.git/
 ^.svn/
 /.svn/
 .patch$
