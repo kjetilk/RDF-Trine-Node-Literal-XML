@@ -10,6 +10,7 @@ readme_from       	'lib/RDF/Trine/Node/Literal/XML.pm';
 
 test_requires		'Test::More'				=> '0.88';
 test_requires		'Test::Exception'			=> 0;
+test_requires		'Test::NoWarnings'			=> 0;
 
 configure_requires     	'XML::LibXML'				=> 0;
 configure_requires     	'Carp'				        => 0;
