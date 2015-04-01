@@ -204,4 +204,17 @@ __END__
 First created by Gregory Todd Williams <gwilliams@cpan.org>, modfied
 and maintained by Kjetil Kjernsmo <kjetilk@cpan.org>
 
+=head1 LICENSE AND COPYRIGHT
+
+Copyright (c) 2009 Kjetil Kjernsmo
+All rights reserved.
+
+This module is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself. See L<perlartistic>.  This program is
+distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+
 =cut
+
+

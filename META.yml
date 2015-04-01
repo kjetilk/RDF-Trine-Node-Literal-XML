@@ -1,0 +1,16 @@
+---
+abstract: 'RDF Node class for XMLLiterals'
+author:
+  - 'Kjetil Kjernsmo'
+dynamic_config: 1
+license: perl
+name: RDF-Trine-Node-Literal-XML
+provides:
+  RDF::Trine::Node::Literal::XML:
+    file: lib/RDF/Trine/Node/Literal/XML.pm
+    version: '0.16'
+requires:
+  perl: '5.006'
+resources:
+  license: http://dev.perl.org/licenses/
+version: '0.16'
